@@ -1,4 +1,4 @@
-from Evaluation import Evalualtion  # Импортирование модуля Evalualtion
+from Evaluation import Evaluation  # Импортирование модуля Evaluation
 
 MAX, MIN = 100000, -100000  # Определение максимального и минимального значений для оценки
 
@@ -14,9 +14,9 @@ def minimax(depth, maximizingPlayer, alpha, beta, board, firstMove):
     if (depth == 0) or (board.is_game_over()):
 
         if maximizingPlayer:
-            eval = Evalualtion(board, "W")  # Вычисление оценки для белых фигур
+            eval = Evaluation(board, "W")  # Вычисление оценки для белых фигур
         else:
-            eval = Evalualtion(board, "B")  # Вычисление оценки для черных фигур
+            eval = Evaluation(board, "B")  # Вычисление оценки для черных фигур
 
         return eval.result()  # Возврат результата оценки
 

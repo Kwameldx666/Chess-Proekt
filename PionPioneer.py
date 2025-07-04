@@ -1,10 +1,10 @@
-from Evaluation import Evalualtion
+from Evaluation import Evaluation
 import  chess
 
 def minimax_without_alpha_beta(board, depth, is_maximizing):
     if (depth == 0) or (board.is_game_over()):
         player = "W" if is_maximizing else "B"
-        eval_instance = Evalualtion(board, player)
+        eval_instance = Evaluation(board, player)
         return eval_instance.result()
 
     moves = list(board.legal_moves)

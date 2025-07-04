@@ -14,7 +14,7 @@ def second_bot_menu(self):
             self.win.fill((0, 128, 128))
             largeText = py.font.SysFont("comicsansms", 90)
             mediumText = py.font.SysFont("comicsansms", 50)
-            self.background_image = py.image.load('Image\ChessBlack1.png')
+            self.background_image = py.image.load('Image/ChessBlack1.png')
             self.win.blit(self.background_image, (0, 0))
             TextSurfMian, TextRectMain = self.text_objects("Черные", largeText)
             TextRectMain.center = ((self.dim / 2), (self.dim / 2 - 200))
@@ -68,7 +68,7 @@ class DisplayBoard:
         py.display.set_caption("Chess")  # Установка заголовка окна
 
         # Загрузка и масштабирование изображения шахматной доски
-        self.chessBoard = py.image.load("Image\Board.jpg").convert_alpha()  # Загрузка изображения доски
+        self.chessBoard = py.image.load("Image/Board.jpg").convert_alpha()  # Загрузка изображения доски
         self.chessBoard = py.transform.scale(self.chessBoard, (
             self.dim, self.dim))  # Масштабирование изображения доски до нужных размеров
 
@@ -261,7 +261,7 @@ class DisplayBoard:
                 if event.type == py.QUIT:
                     py.quit()
                     quit()
-            self.background_image = py.image.load('Image\Botik.png')
+            self.background_image = py.image.load('Image/Botik.png')
             self.win.blit(self.background_image, (0, 0))
 
             self.button("AI vs AI ", 40, 400, 130, 50, (250, 235, 215), (50, 205, 50), 16)
@@ -387,7 +387,7 @@ class DisplayBoard:
                 # print(event)
                 if event.type == py.QUIT:
                     py.quit()
-            self.background_image = py.image.load('Image\Chess2.png')
+            self.background_image = py.image.load('Image/Chess2.png')
             self.win.blit(self.background_image, (0, 0))
             largeText = py.font.SysFont("comicsansms", 115)
             # TextSurf, TextRect = self.text_objects("Chess", largeText)
@@ -412,7 +412,7 @@ class DisplayBoard:
                 self.win.fill((0, 128, 128))
                 largeText = py.font.SysFont("comicsansms", 90)
                 mediumText = py.font.SysFont("comicsansms", 50)
-                self.background_image = py.image.load('Image\ChessWHITE.png')
+                self.background_image = py.image.load('Image/ChessWHITE.png')
                 self.win.blit(self.background_image, (0, 0))
                 TextSurfMian, TextRectMain = self.text_objects("Белые", largeText)
                 TextRectMain.center = ((self.dim / 2), (self.dim / 2 - 200))
@@ -436,7 +436,7 @@ class DisplayBoard:
                 self.win.fill((0, 128, 128))
                 largeText = py.font.SysFont("comicsansms", 90)
                 mediumText = py.font.SysFont("comicsansms", 50)
-                self.background_image = py.image.load('Image\ChessBlack1.png')
+                self.background_image = py.image.load('Image/ChessBlack1.png')
                 self.win.blit(self.background_image, (0, 0))
                 TextSurfMian, TextRectMain = self.text_objects("Черные", largeText)
                 TextRectMain.center = ((self.dim / 2), (self.dim / 2 - 200))
@@ -468,7 +468,7 @@ class DisplayBoard:
                 self.win.fill((0, 128, 128))
                 largeText = py.font.SysFont("comicsansms", 90)
                 mediumText = py.font.SysFont("comicsansms", 50)
-                self.background_image = py.image.load('Image\ChessWHITE.png')
+                self.background_image = py.image.load('Image/ChessWHITE.png')
                 self.win.blit(self.background_image, (0, 0))
                 TextSurfMian, TextRectMain = self.text_objects("Белые", largeText)
                 TextRectMain.center = ((self.dim / 2), (self.dim / 2 - 200))
@@ -537,14 +537,14 @@ class Piece():
 
         if (self.color == "W") or (self.color == "White"):
             if self.name != "Knight":
-                self.pieceSurface = py.image.load("Image\Chess_" + self.name.lower()[0] + "lt60.png")
+                self.pieceSurface = py.image.load("Image/Chess_" + self.name.lower()[0] + "lt60.png")
             else:
-                self.pieceSurface = py.image.load("Image\Chess_nlt60.png")
+                self.pieceSurface = py.image.load("Image/Chess_nlt60.png")
         else:
             if self.name != "Knight":
-                self.pieceSurface = py.image.load("Image\Chess_" + self.name.lower()[0] + "dt60.png")
+                self.pieceSurface = py.image.load("Image/Chess_" + self.name.lower()[0] + "dt60.png")
             else:
-                self.pieceSurface = py.image.load("Image\Chess_ndt60.png")
+                self.pieceSurface = py.image.load("Image/Chess_ndt60.png")
 
         self.pieceSurface = py.transform.scale(self.pieceSurface, (self.dim, self.dim))
 

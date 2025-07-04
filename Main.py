@@ -1,6 +1,6 @@
 from Board import DisplayBoard
 from MiniMax import minimax
-from Evaluation import Evalualtion
+from Evaluation import Evaluation
 import chess
 import pygame as py
 from Random import complex_random_move
@@ -33,7 +33,7 @@ def move():
     player_possible_move = display.square_select(py.mouse.get_pos())
     if player_possible_move != None:
         try:
-            eval = Evalualtion(board, display.player_color)
+            eval = Evaluation(board, display.player_color)
             is_late_game = eval.is_late_game()
 
             if display.opponent_choice == "Bot 1":

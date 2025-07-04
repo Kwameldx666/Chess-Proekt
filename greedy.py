@@ -1,4 +1,4 @@
-from Evaluation import Evalualtion  # Импортируем класс Evalualtion из модуля Evaluation
+from Evaluation import Evaluation  # Импортируем класс Evaluation из модуля Evaluation
 
 # Функция для реализации жадного алгоритма выбора хода
 # board - текущее состояние шахматной доски
@@ -11,7 +11,7 @@ def greedy_algorithm(board, player):
     # Перебираем все легальные ходы для текущего игрока
     for move in board.legal_moves:
         board.push(move)  # Применяем ход на доске
-        eval = Evalualtion(board, player)  # Создаем экземпляр класса Evalualtion и вычисляем оценку
+        eval = Evaluation(board, player)  # Создаем экземпляр класса Evaluation и вычисляем оценку
         current_value = eval.result()  # Получаем оценку текущего состояния доски
         board.pop()  # Отменяем ход на доске
 
@@ -22,4 +22,4 @@ def greedy_algorithm(board, player):
 
     return best_move  # Возвращаем только лучший ход для последующих ходов
 
-# Здесь оставлена заглушка для класса Evalualtion, так как он не определен в предоставленном коде.
+# Здесь оставлена заглушка для класса Evaluation, так как он не определен в предоставленном коде.
