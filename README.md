@@ -23,8 +23,8 @@ You can instantly run the demo:
 
 - Download and unzip or clone this repository:
     ```
-    git clone https://github.com/GerniVisser/Chess.git
-    cd Chess
+    git clone https://github.com/Kwameldx666/Chess-Proekt.git
+    cd Chess-Proekt
     ```
 - Install requirements
 
@@ -35,7 +35,7 @@ You can instantly run the demo:
     ```
 - Run demo
     ```
-    python3 main.py
+    python3 Main.py
     ```
   
 

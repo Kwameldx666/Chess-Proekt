@@ -1,6 +1,6 @@
 from Piece_Development_Values import BoardValues
 
-class Evalualtion():
+class Evaluation():
 
     def __init__(self, board, color):
         self.board = board
