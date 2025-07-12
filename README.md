@@ -1,74 +1,174 @@
 
-# Chess AI
+# 🏆 Chess AI Project / Шахматный ИИ Проект
 
-A fully implemented interactive Chess AI implemented using the MiniMax algorithm and Alpha-beta pruning for optimization. Full-fledged UI makes for a pleasant user experience. 
+<div align="center">
 
+[![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![Pygame](https://img.shields.io/badge/pygame-2.0+-green.svg)](https://www.pygame.org/)
+[![Chess](https://img.shields.io/badge/python--chess-1.999-orange.svg)](https://pypi.org/project/python-chess/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Demo
+*An advanced chess AI implementation with multiple algorithms and interactive gameplay*
 
+*Продвинутая реализация шахматного ИИ с множественными алгоритмами и интерактивным геймплеем*
 
-  ![Alt Text](https://media.giphy.com/media/hojJHfOF6Z8XvfHjl2/giphy.gif)
-## Features
+</div>
 
-- Color selection
-- Interactive UI using [pygame](https://www.pygame.org/)
-- Configure search depth
-- invalid move prevention 
+## 🎯 Overview / Обзор
 
-  
+This project is a comprehensive chess AI implementation featuring multiple sophisticated algorithms for intelligent gameplay. Built with Python and Pygame, it offers an interactive chess experience where players can compete against various AI opponents with different playing styles and difficulty levels.
 
-## Usage/Examples
+*Этот проект представляет собой комплексную реализацию шахматного ИИ с множественными сложными алгоритмами для интеллектуального геймплея. Построенный на Python и Pygame, он предлагает интерактивный шахматный опыт, где игроки могут соревноваться с различными ИИ-противниками с разными стилями игры и уровнями сложности.*
 
-You can instantly run the demo: 
+## ✨ Features / Функции
 
-- Download and unzip or clone this repository:
-    ```
-    git clone https://github.com/GerniVisser/Chess.git
-    cd Chess
-    ```
-- Install requirements
+### 🎮 Gameplay Features
+- **Interactive GUI** - Beautiful pygame-based chess interface
+- **Color Selection** - Choose to play as White or Black pieces  
+- **Multiple Game Modes** - Human vs AI, AI vs AI
+- **Move Validation** - Automatic prevention of invalid moves
+- **Real-time Board Updates** - Smooth visual feedback for all moves
 
-    Install newest verion of pygame used to display a visual UI ([pygame's website](https://www.pygame.org/))
-    . As well as the python-chess library to validate moves and board state ([python-chess's website](https://pypi.org/project/python-chess/))
-    ```
-    pip3 install -r requirements.txt 
-    ```
-- Run demo
-    ```
-    python3 main.py
-    ```
-  
+### 🤖 AI Algorithms
 
-  
+| Algorithm | Description | Strength |
+|-----------|-------------|----------|
+| **MiniMax with Alpha-Beta Pruning** | Classic game theory algorithm with optimization | ⭐⭐⭐⭐⭐ |
+| **Monte Carlo Tree Search (MCTS)** | Modern probabilistic search algorithm | ⭐⭐⭐⭐ |
+| **Greedy Algorithm** | Fast heuristic-based move selection | ⭐⭐⭐ |
+| **Random Player** | Baseline random move generation | ⭐ |
 
-## General
+### 🧠 Advanced Features
+- **Configurable Search Depth** - Adjust AI thinking depth (up to 6 moves ahead)
+- **Position Evaluation** - Sophisticated board state assessment
+- **Piece Development Analysis** - Strategic piece positioning evaluation
+- **Late Game Detection** - Adaptive strategy for endgame scenarios
+- **Material Balance Calculation** - Precise piece value assessment
 
-This project was the result of a research endeavour into simulating intelligent decision making in chess. In the field of Game Theory a common approach to compute the best sequence of moves to maximize the odds of winning is to use the Minimax algorithm to minimize the possible loss for a worst case (maximum loss) scenario.
+## 🚀 Quick Start / Быстрый старт
 
-### MiniMax
+### Prerequisites / Требования
+- Python 3.7 or higher
+- pip package manager
 
-Minimax is a kind of backtracking algorithm that is used in decision making and game theory to find the optimal move for a player, assuming that your opponent also plays optimally. It is widely used in two player turn-based games such as Chess or Tic-Tac-Toe
-In Minimax the two players are called maximizer and minimizer. The maximizer tries to get the highest score possible while the minimizer tries to do the opposite and get the lowest score possible.
-Every board state has a value associated with it. In a given state if the maximizer has upper hand then, the score of the board will tend to be some positive value. If the minimizer has the upper hand in that board state then it will tend to be some negative value. The values of the board are calculated by some heuristics which are unique for every type of game.
+### Installation / Установка
 
-![Alt Text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Minimax.svg)
+1. **Clone the repository / Клонировать репозиторий:**
+   ```bash
+   git clone https://github.com/Kwameldx666/Chess-Proekt.git
+   cd Chess-Proekt
+   ```
 
-### Evauation function
+2. **Install dependencies / Установить зависимости:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-The evaluation function is used to assign a numerical value to a board state so that different board states that is a result of different sequence of moves could be compared by the MiniMax algorithm 
+3. **Run the game / Запустить игру:**
+   ```bash
+   python Main.py
+   ```
 
-#### Factors that are considered
-- Material
-- Piece development
+## 🎮 How to Play / Как играть
 
-### Alpha-beta pruning
-This is an optimization algorithm that greatly reduces the number of board states that bahve to be evaluated by removing board states that are obviously undesireble
+1. **Launch the game** and select your color (White/Black)
+2. **Choose your opponent** from the AI selection menu:
+   - Bot 1: MiniMax with Alpha-Beta Pruning
+   - Bot 2: Alternative algorithms (Greedy, MCTS, Random)
+3. **Make moves** by clicking on pieces and target squares
+4. **Enjoy** strategic gameplay against intelligent AI opponents!
 
-## Lessons Learned
+*1. **Запустите игру** и выберите свой цвет (Белые/Черные)*
+*2. **Выберите противника** из меню выбора ИИ*
+*3. **Делайте ходы** кликая по фигурам и целевым клеткам*
+*4. **Наслаждайтесь** стратегическим геймплеем против умных ИИ-противников!*
 
-The engine evaluates every possible move up to six moves into the future. All the board states after the six moves are analyzed to determine which one has the highest probability of winning. By utilizing the MiniMax algorithm, the engine can then calculate which moves to make. The assumption is that the opposing player would also be making the optimal moves to ensure his/her victory. I then added the Alpha-beta pruning algorithm that reduces the number of board states to evaluate by removing those that are obviously unfavorable.
-Evaluating any given board state is done with the use of an evaluation function. There are many ways to implement such a function, so my goal was to find one that balanced performance with accuracy. Performance is improved by reducing the number of parameters to process while accuracy is improved by increasing it. I set a 10 second limit to the processing time and then went on to find the most efficient evaluation function that I could. The one I finally came up with allowed the engine to evaluate 6 moves ahead.
+## 🏗️ Project Structure / Структура проекта
 
-  
+```
+Chess-Proekt/
+├── Main.py                      # Main game entry point / Главная точка входа
+├── Board.py                     # GUI and board display / Интерфейс и отображение доски
+├── MiniMax.py                   # MiniMax algorithm implementation
+├── MCTS.py                      # Monte Carlo Tree Search algorithm
+├── Evaluation.py                # Board position evaluation system
+├── greedy.py                    # Greedy algorithm implementation
+├── Random.py                    # Random move generation
+├── PionPioneer.py              # Pioneer pawn algorithm
+├── Piece_Development_Values.py  # Piece positioning values
+├── requirements.txt             # Project dependencies
+└── README.md                   # Project documentation
+```
 
+## 🧮 Algorithms Explained / Объяснение алгоритмов
 
+### MiniMax with Alpha-Beta Pruning
+The core algorithm uses game theory principles to find optimal moves by:
+- **Maximizing** player advantage while **minimizing** opponent opportunities
+- **Alpha-Beta pruning** eliminates obviously poor branches, improving performance
+- **Configurable depth** allows trading speed for strategic thinking depth
+
+### Monte Carlo Tree Search (MCTS)
+A modern probabilistic approach that:
+- **Simulates** thousands of random game continuations
+- **Selects** moves based on statistical success rates
+- **Adapts** strategy based on position characteristics
+
+### Evaluation Function
+Sophisticated position assessment considering:
+- **Material balance** (piece values: Pawn=1, Knight/Bishop=3, Rook=5, Queen=9)
+- **Piece development** and positioning
+- **King safety** and endgame factors
+- **Strategic considerations** like center control
+
+## 🎯 Performance / Производительность
+
+- **Search Depth**: Up to 6 moves ahead
+- **Evaluation Speed**: ~10 seconds per move (configurable)
+- **Move Generation**: Instant legal move validation
+- **AI Response Time**: 1-10 seconds depending on complexity
+
+## 🛠️ Development / Разработка
+
+### Key Classes / Основные классы
+
+- `DisplayBoard`: Handles GUI rendering and user interaction
+- `Evaluation`: Implements position evaluation logic  
+- `minimax()`: Core MiniMax algorithm with Alpha-Beta pruning
+- `greedy_algorithm()`: Fast heuristic-based move selection
+
+### Adding New Algorithms / Добавление новых алгоритмов
+
+1. Create new algorithm file (e.g., `new_algorithm.py`)
+2. Implement move selection function returning `chess.Move`
+3. Add to opponent selection menu in `Board.py`
+4. Integrate in main game loop in `Main.py`
+
+## 🤝 Contributing / Участие в разработке
+
+We welcome contributions! Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License / Лицензия
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments / Благодарности
+
+- [python-chess](https://python-chess.readthedocs.io/) - Excellent chess library
+- [Pygame](https://www.pygame.org/) - Game development framework
+- Chess AI community for algorithm insights and optimization techniques
+
+---
+
+<div align="center">
+
+**Enjoy playing chess against intelligent AI! / Наслаждайтесь игрой в шахматы против умного ИИ!**
+
+⭐ Star this repository if you found it helpful! ⭐
+
+</div>
